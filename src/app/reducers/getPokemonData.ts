@@ -9,9 +9,13 @@ export const getPokemonData = createAsyncThunk("pokemon/randomPokemon",async (po
     for await (const pokemon of pokemons) {
       const {data}:{
         data:{
-          id: number
+          id: number;
+          types: {type: generatedPokemonType}[];
         };
       } = await axios.get(pokemon.url)
+      const types = data.types.map(({ type:{name} }:{type:{name:string}}) => ({
+        [name]:pokemonTypes[name]
+      }));
       // @ts-expect-error
       let image: string = images[data.id]
       if (!image) {
