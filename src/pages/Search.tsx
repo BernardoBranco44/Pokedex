@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import Wrapper from '../sections/Wrapper'
-import { useAppDispatch, useAppSelector } from '../app/hooks'
-import { getInitialPokemonData } from '../app/reducers/getInitialPokemonData'
-import { getPokemonData } from '../app/reducers/getPokemonData'
+import React, { useEffect } from "react";
+import Wrapper from "../sections/Wrapper";
+import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { getInitialPokemonData } from "../app/reducers/getInitialPokemonData";
+import { getPokemonData } from "../app/reducers/getPokemonData";
 
 function Search() {
-  const dispatch = useAppDispatch()
-  const { allPokemon } = useAppSelector(({pokemon}) => pokemon)
+  const dispatch = useAppDispatch();
+  const { allPokemon } = useAppSelector(({ pokemon }) => pokemon);
 
   useEffect(() => {
-    dispatch(getInitialPokemonData())
-  },[dispatch])
+    dispatch(getInitialPokemonData());
+  }, [dispatch]);
 
   useEffect(() => {
     if (allPokemon) {
@@ -22,9 +22,7 @@ function Search() {
     }
   }, [allPokemon, dispatch]);
 
-  return (
-    <div>Search</div>
-  )
+  return <div>Search</div>;
 }
 
-export default Wrapper(Search)
+export default Wrapper(Search);
