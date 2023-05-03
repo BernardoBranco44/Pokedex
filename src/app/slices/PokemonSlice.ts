@@ -12,9 +12,9 @@ export const PokemonSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getInitialPokemonData.fulfilled, (state, action) => {
-      state.allPokemon = action.payload
-    })
-  }
-})
+      state.allPokemon = action.payload;
+    });
+  },
+});
 
 export const {} = PokemonSlice.actions;
