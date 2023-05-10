@@ -18,12 +18,12 @@ function App() {
         <div className="app">
           <Navbar />
           <Routes>
-            <Route element={<Search />} path="/search" />
-            <Route element={<MyList />} path="/list" />
-            <Route element={<Compare />} path="/compare" />
-            <Route element={<About />} path="/about" />
-            <Route element={<Pokemon />} path="/pokemon/:id" />
-            <Route element={<Navigate to="/pokemon/1" />} path="*" />
+              <Route element={<Search />} path="/search" />
+              <Route element={<MyList />} path="/list" />
+              <Route element={<Compare />} path="/compare" />
+              <Route element={<About />} path="/about" />
+              <Route element={<Pokemon />} path="/pokemon/:id" />
+              <Route element={<Navigate to="/pokemon/1" />} path="*" />
           </Routes>
           <Footer />
         </div>
